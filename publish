@@ -9,6 +9,13 @@ cd ../..
 ng build ngx-message
 cp README.md LICENSE dist/ngx-message/
 
+# build the demo
+ng build ngx-message-demo  --prod --aot --baseHref /ngx-message/
+
+# build the docs
+compodoc  -p projects/ngx-message/tsconfig.lib.json  --disableCoverage --output docs/docs 
+
+
 # publish to NPM
 cd dist/ngx-message
 npm publish --access public
