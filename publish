@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# bump the version
+cd projects/ngx-message
+VERSION="$(npm version patch)"
+cd ../..
+
+# build the lib
+ng build ngx-message --prod
+cp README.md LICENSE dist/ngx-message/
+
+# publish to NPM
+cd dist/ngx-message
+npm publish --access public
+cd ../..
