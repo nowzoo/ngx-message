@@ -13,9 +13,9 @@ export class AppComponent {
   ) {}
 
   showWait() {
-    this.service.wait('Waiting ....');
+    this.service.wait('Waiting for a while....');
     setTimeout(() => {
-      this.service.hide();
+      this.service.success('All done!');
     }, 3000);
   }
 
