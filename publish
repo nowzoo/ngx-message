@@ -6,10 +6,18 @@ VERSION="$(npm version patch)"
 cd ../..
 
 # build the lib
-ng build ngx-message --prod
+ng build ngx-message
 cp README.md LICENSE dist/ngx-message/
 
 # publish to NPM
 cd dist/ngx-message
 npm publish --access public
 cd ../..
+
+
+# commit with tag
+git add -A
+git commit -m "published version ${VERSION} to npm"
+git tag  $VERSION
+git push
+git push --tags
