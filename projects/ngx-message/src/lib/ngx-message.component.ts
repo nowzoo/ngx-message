@@ -9,17 +9,13 @@ import { INgxMessage, NgxMessageContext} from './shared';
   template: `
   <div class="ngx-message-container-modal" [class.shown]="'wait'===context && shown"></div>
   <div class="ngx-message-container" [class.shown]="shown">
-    <div class="alert mb-0"
-      [class.alert-secondary]="'wait'===context"
+    <div class="ngx-message-container-inner alert"
       [class.alert-success]="'success'===context"
-      [class.alert-warning]="'warn'===context">
+      [class.alert-warning]="'warn'===context"
+      [class.alert-info]="'wait'===context">
       <div class="d-flex align-items-center">
-        <div class="mr-2">
-          <i class="fas fa-spinner fa-spin" *ngIf="'wait'===context"></i>
-          <i class="fas fa-check" *ngIf="'success'===context"></i>
-          <i class="fas fa-exclamation-triangle" *ngIf="'warn'===context"></i>
-        </div>
-        <div>
+        <div class="ngx-message-container-icon" aria-hidden="true"></div>
+        <div class="ngx-message-container-message">
           {{message}}
         </div>
       </div>

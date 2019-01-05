@@ -1,5 +1,7 @@
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/_mixins";
+@import "~bootstrap/scss/_alert";
 
 
 .ngx-message-container-modal, .ngx-message-container {
@@ -7,7 +9,7 @@
   top: 0;
   right: 0;
   transform: translateX(100%);
-  
+
   &.ngx-message-container-modal {
     z-index: $zindex-tooltip + 1;
     left: 0;
