@@ -6,22 +6,7 @@ import { INgxMessage, NgxMessageContext} from './shared';
 
 @Component({
   selector: 'ngx-message',
-  template: `
-  <div class="ngx-message-container-modal" [class.shown]="'wait'===context && shown"></div>
-  <div class="ngx-message-container" [class.shown]="shown">
-    <div class="ngx-message-container-inner alert"
-      [class.alert-success]="'success'===context"
-      [class.alert-warning]="'warn'===context"
-      [class.alert-info]="'wait'===context">
-      <div class="d-flex align-items-center">
-        <div class="ngx-message-container-icon" aria-hidden="true"></div>
-        <div class="ngx-message-container-message">
-          {{message}}
-        </div>
-      </div>
-    </div>
-  </div>
-  `,
+  templateUrl: './ngx-message.component.html',
   styleUrls: ['./ngx-message.component.scss']
 })
 export class NgxMessageComponent implements OnInit, OnDestroy {
