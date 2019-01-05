@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+
+
 # bump the version
 cd projects/ngx-message
 VERSION="$(npm version patch)"
@@ -13,7 +15,9 @@ cp README.md LICENSE dist/ngx-message/
 ng build ngx-message-demo  --prod --aot --baseHref /ngx-message/
 
 # build the docs
-compodoc  -p projects/ngx-message/tsconfig.lib.json  --disableCoverage --output docs/docs 
+compodoc  -p projects/ngx-message/tsconfig.lib.json  --disableCoverage --output docs/docs
+
+
 
 
 # publish to NPM
